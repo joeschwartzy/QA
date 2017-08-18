@@ -28,12 +28,24 @@ html, body {
 
 @include respond-to(small) {
     
-    
+    .hero-image {
+        background-position: 50% 40%;
+        background-size: 120%;
+    }
+    .tagline {
+        background-image: url('../img/lockup.png');
+    }
     
 }
 
 @include respond-to(medium) {
     
-    
+    .hero-image {
+        background-size: 145%;
+        height: 75vh;
+    }
+    .tagline {
+        width: 90%;
+    }
     
 }
