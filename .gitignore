@@ -3,3 +3,5 @@
 
 .htaccess
 .editorconfig
+.sass-cache/
+css/main.css
