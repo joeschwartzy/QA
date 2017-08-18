@@ -1,0 +1,39 @@
+@import "mixins";
+
+html, body {
+    height: 100%;
+}
+
+@include respond-to(mobile) {
+    
+    .hero-image {
+        align-items: center;
+        background-image: url('../img/kid_skiing.jpg');
+        background-position: center;
+        background-size: 140%;
+        display: flex;
+        height: 45vh;
+        justify-content: center;
+        width: 100%;
+    }
+    .tagline {
+        background-image: url('../img/lockup_mobile.png');
+        background-position: center;
+        background-size: cover;    
+        height: 100%;
+        width: 75%;
+    }
+    
+}
+
+@include respond-to(small) {
+    
+    
+    
+}
+
+@include respond-to(medium) {
+    
+    
+    
+}
