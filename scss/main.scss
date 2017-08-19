@@ -1,3 +1,4 @@
+@import "fonts";
 @import "mixins";
 
 html, body {
@@ -6,6 +7,12 @@ html, body {
 
 @include respond-to(mobile) {
     
+    .gc {
+        text-transform: uppercase;
+    }
+    .gc-triforce {
+        margin-bottom: 4rem;
+    }
     .hero-image {
         align-items: center;
         background-image: url('../img/kid_skiing.jpg');
@@ -15,6 +22,21 @@ html, body {
         height: 45vh;
         justify-content: center;
         width: 100%;
+    }
+    .promotion {
+        background-image: url('../img/chalkboard.jpg');
+        color: #fff;
+        font-family: Chalkduster, sans-serif;
+        padding: 4rem;
+        text-align: center;
+        h2 {
+            font-size: 20px;
+        }
+        p {
+            font-family: MuseoSans, Arial, sans-serif;
+            font-weight: 300;
+            text-align: left;
+        }
     }
     .tagline {
         background-image: url('../img/lockup_mobile.png');
