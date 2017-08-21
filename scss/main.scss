@@ -9,9 +9,24 @@ html, body {
 @include respond-to(mobile) {
     
     .gc {
+        @include center-block;
+        padding: 1.5rem 0 0;
         text-transform: uppercase;
+        width: 75%;
+        &:before {
+            @include small-chalk-line;
+            margin-left: -30px;
+        }
+        &:last-of-type {
+            &:after {
+                @include small-chalk-line;
+                margin-top: 1.5rem;
+                margin-left: -30px;
+            }
+        }
         h2 {
             font-size: 24px;
+            margin-bottom: 0;
         }
     }
     .gc-cta {
@@ -21,16 +36,20 @@ html, body {
         font-family: MuseoSans, Arial, sans-serif;
         font-weight: bold;
         height: 3.25rem;
+        margin: 1.5rem 0;
         padding: 0 1rem;
         text-transform: uppercase;
+        white-space: nowrap;
     }
     .gc-image {
+        background-position: center;
         background-size: cover;
         @include center-block;
-        height: 260px;
+        height: 220px;
+        max-width: 230px;
         padding: 0;
         position: relative;
-        width: 360px;
+        width: 100%;
         &.hundo {
             background-image: url('../img/giftcard_100.png');
         }
@@ -50,7 +69,7 @@ html, body {
             height: 4rem;
             line-height: 4rem;
             position: absolute;
-            right: 25px;
+            right: -25px;
             transform: rotate(-16deg);
             width: 4rem;
             &:before {
@@ -58,9 +77,6 @@ html, body {
                 font-size: 16px;
             }
         }
-    }
-    .gc-triforce {
-        margin-bottom: 4rem;
     }
     .hero-image {
         align-items: center;
@@ -78,12 +94,19 @@ html, body {
         background-size: cover;
         color: #fff;
         font-family: Chalkduster, sans-serif;
-        padding: 4rem 6.5rem;
+        padding: 3rem;
+        position: relative;
         text-align: center;
         p {
             font-family: MuseoSans, Arial, sans-serif;
             font-weight: 300;
             text-align: left;
+        }
+        &:before {
+            content: url('../img/mobile_chalk_horizontal_1.png');
+            left: -8px;
+            position: absolute;
+            top: -12px;
         }
     }
     .tagline {
@@ -98,9 +121,63 @@ html, body {
 
 @include respond-to(small) {
     
+    .gc {
+        flex: 1 1 33%;
+        height: 340px;
+        padding: 1.5rem 2rem;
+        position: relative;
+        &:before {
+            content: none;
+        }
+        &:after {
+            content: url('../img/tablet_chalk_vertical_1.png');
+            position: absolute;
+            right: -5px;
+            top: 35px;
+        }
+        &:last-of-type {
+            &:after {
+                content: none;
+            }
+        }
+    }
+    .gc-cta {
+        font-size: 16px; // fallback for legacy browsers
+        font-size: 1.4vw;
+        height: 2.25rem;
+    }
+    .gc-image {
+        height: 170px;
+        width: 200px;
+        .value {
+            bottom: 4px;
+            right: -14px;
+        }
+    }
+    .gc-triforce {
+        display: flex;
+        width: 100%;
+    }
     .hero-image {
         background-position: 50% 40%;
         background-size: 120%;
+    }
+    .promotion {
+        padding: 2rem 0.5rem;
+        &:before {
+            content: url('../img/tablet_chalk_horizontal_1.png');
+            left: -12px;
+            top: -8px;
+        }
+        > h2 {
+            @include center-block;
+            font-size: 28px;
+            width: 50%;
+        }
+        p {
+            padding: 0 5rem;
+            text-align: center;
+        }
     }
     .tagline {
         background-image: url('../img/lockup.png');
@@ -110,9 +187,43 @@ html, body {
 
 @include respond-to(medium) {
     
+    .gc {
+        &:after {
+            content: url('../img/desktop_chalk_vertical_1.png');
+            position: absolute;
+            right: -5px;
+            top: 35px;
+        }
+    }
+    .gc-cta {
+        font-size: 16px;
+        height: 3.25rem;
+    }
+    .gc-image {
+        height: 170px;
+        max-width: none;
+        width: 280px;
+        .value {
+            right: 8px;
+        }
+    }
     .hero-image {
         background-size: 145%;
         height: 75vh;
+    }
+    .promotion {
+        &:before {
+            content: url('../img/desktop_chalk_horizontal_1.png');
+            top: -13px;
+        }
+        > h2 {
+            font-size: 36px;
+        }
+        p {
+            @include center-block;
+            margin-top: 6rem;
+            width: 60%;
+        }
     }
     .tagline {
         width: 90%;
