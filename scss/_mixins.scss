@@ -18,6 +18,12 @@
 	table-layout: fixed;
 }
 
+@mixin small-chalk-line() {
+    content: url('../img/mobile_chalk_horozontal_small.png');
+    display: block;
+    margin-bottom: 3rem;
+}
+
 // Clear after (not all clearfix need this also)
 @mixin clearfix-after() {
 	clear: both;
