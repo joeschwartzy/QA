@@ -1,3 +1,4 @@
+@import "colors";
 @import "fonts";
 @import "mixins";
 
@@ -9,6 +10,54 @@ html, body {
     
     .gc {
         text-transform: uppercase;
+        h2 {
+            font-size: 24px;
+        }
+    }
+    .gc-cta {
+        background-color: $orange;
+        border: none;
+        border-radius: 10px;
+        font-family: MuseoSans, Arial, sans-serif;
+        font-weight: bold;
+        height: 3.25rem;
+        padding: 0 1rem;
+        text-transform: uppercase;
+    }
+    .gc-image {
+        background-size: cover;
+        @include center-block;
+        height: 260px;
+        padding: 0;
+        position: relative;
+        width: 360px;
+        &.hundo {
+            background-image: url('../img/giftcard_100.png');
+        }
+        &.hundo-fifty {
+            background-image: url('../img/giftcard_150.png');
+        }
+        &.two-hundo {
+            background-image: url('../img/giftcard_200.png');
+        }
+        .value {
+            background-color: $green;
+            bottom: 20px;
+            border-radius: 50%;
+            font-family: MuseoSans, Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bolder;
+            height: 4rem;
+            line-height: 4rem;
+            position: absolute;
+            right: 25px;
+            transform: rotate(-16deg);
+            width: 4rem;
+            &:before {
+                content: '\002b';
+                font-size: 16px;
+            }
+        }
     }
     .gc-triforce {
         margin-bottom: 4rem;
@@ -25,13 +74,12 @@ html, body {
     }
     .promotion {
         background-image: url('../img/chalkboard.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
         color: #fff;
         font-family: Chalkduster, sans-serif;
-        padding: 4rem;
+        padding: 4rem 6.5rem;
         text-align: center;
-        h2 {
-            font-size: 20px;
-        }
         p {
             font-family: MuseoSans, Arial, sans-serif;
             font-weight: 300;
